@@ -14,7 +14,8 @@
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
-        "darkaonline/l5-swagger":"~3.0"
+        "darkaonline/l5-swagger":"~3.0",
+        "phpunit/phpunit": "5.5.*"
     },
     "autoload": {
         "classmap": [

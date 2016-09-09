@@ -8,10 +8,29 @@
         "/api/shortest-path": {
             "get": {
                 "summary": "Get the shortest path between two nodes",
-                "responses": {
-                    "200": {
-                        "description": "The shortest path"
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "ID of deal that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64",
+                        "maximum": "1000000.0",
+                        "minimum": "1"
                     },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "ID of deal that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64",
+                        "maximum": "1000000.0",
+                        "minimum": "1"
+                    }
+                ],
+                "responses": {
                     "default": {
                         "description": ""
                     }
