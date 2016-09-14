@@ -12,4 +12,4 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/shortest-path', ['uses' => 'PathfinderController@getPath']);
+Route::get('/shortest-path/{origin}/{destination}', ['uses' => 'PathfinderController@getPath']);

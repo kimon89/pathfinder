@@ -5,28 +5,26 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/api/shortest-path": {
+        "/api/shortest-path/{origin}/{destination}": {
             "get": {
                 "summary": "Get the shortest path between two nodes",
                 "parameters": [
                     {
-                        "name": "start",
-                        "in": "query",
-                        "description": "ID of deal that needs to be fetched",
+                        "name": "origin",
+                        "in": "path",
+                        "description": "ID of the origin user",
                         "required": true,
                         "type": "integer",
                         "format": "int64",
-                        "maximum": "1000000.0",
                         "minimum": "1"
                     },
                     {
-                        "name": "end",
-                        "in": "query",
-                        "description": "ID of deal that needs to be fetched",
+                        "name": "destination",
+                        "in": "path",
+                        "description": "ID of the destination user",
                         "required": true,
                         "type": "integer",
                         "format": "int64",
-                        "maximum": "1000000.0",
                         "minimum": "1"
                     }
                 ],

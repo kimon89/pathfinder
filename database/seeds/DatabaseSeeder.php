@@ -30,8 +30,5 @@ class DatabaseSeeder extends Seeder
                 $already[] = $key;
             }   
         } 
-        foreach ($repositories as $repository) {
-            $repositoryIds[] = $repository->id;
-        } 
     }
 }

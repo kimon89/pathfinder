@@ -4,5 +4,5 @@ namespace App\Services\DataTransformer;
 
 interface DataTransformerInterface
 {
-	public function transformData(array $data);
+    public function transformData(array $data);
 }

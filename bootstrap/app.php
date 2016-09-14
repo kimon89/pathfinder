@@ -15,6 +15,10 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+if (isset($_GET['testing'])) {
+	$app->loadEnvironmentFrom('.env.behat');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

@@ -10,6 +10,7 @@ use App\Gateways\Repository\Database\RepositoryGateway;
 use App\Services\DataTransformer\DatabaseTransformer;
 use App\Models\User;
 use App\Models\Repository;
+use App\Services\Pathfinder\SimplePathfinder\Algorithms\AlgorithmFactory;
 
 class PathfinderServiceProvider extends ServiceProvider
 {
@@ -17,9 +18,11 @@ class PathfinderServiceProvider extends ServiceProvider
     {
         $this->app->bind(PathfinderServiceInterface::class, function ($app) {
             return new SimplePathfinderService(
-            	new AdjacencyList(), 
-            	new RepositoryGateway(new User(), new Repository()),
-            	new DatabaseTransformer());
+                new AdjacencyList(),
+                new RepositoryGateway(new User(), new Repository()),
+                new DatabaseTransformer(),
+                new AlgorithmFactory()
+                );
         });
     }
 }

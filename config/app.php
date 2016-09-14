@@ -173,7 +173,8 @@ return [
         App\Providers\RepositoryGatewayProvider::class,
         App\Providers\PathfinderServiceProvider::class,
         App\Providers\GraphGeneratorServiceProvider::class,
-        App\Providers\DataTransformerServiceProvider::class
+        App\Providers\DataTransformerServiceProvider::class,
+        App\Providers\AlgorithmFactoryServiceProvider::class
     ],
 
     /*

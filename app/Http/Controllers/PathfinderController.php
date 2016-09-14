@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Http\Request;
 use App\Services\Pathfinder\PathfinderServiceInterface;
+
 /**
  * @SWG\Swagger(
  *   @SWG\Info(
@@ -15,17 +16,17 @@ use App\Services\Pathfinder\PathfinderServiceInterface;
 class PathfinderController extends BaseController
 {
     /**
-	 * @SWG\Get(
-	 *   path="/api/shortest-path",
-	 *   summary="Get the shortest path between two nodes",
-	 *    @SWG\Parameter(
+     * @SWG\Get(
+     *   path="/api/shortest-path/{origin}/{destination}",
+     *   summary="Get the shortest path between two nodes",
+     *    @SWG\Parameter(
      *       name="origin",
      *       description="ID of the origin user",
      *       required=true,
      *       type="integer",
      *       format="int64",
      *       minimum="1",
-     *       in="query"
+     *       in="path"
      *     ),
      *     @SWG\Parameter(
      *       name="destination",
@@ -34,17 +35,17 @@ class PathfinderController extends BaseController
      *       type="integer",
      *       format="int64",
      *       minimum="1",
-     *       in="query"
+     *       in="path"
      *     ),
-	 *   @SWG\Response(
-	 *     response="default",
-	 *     description=""
-	 *   )
-	 * )
-	 */
-    public function getPath(Request $request, PathfinderServiceInterface $pathfinder)
+     *   @SWG\Response(
+     *     response="default",
+     *     description=""
+     *   )
+     * )
+     */
+    public function getPath($origin, $destination, PathfinderServiceInterface $pathfinder)
     {
-    	//pass the data to the pathfinder service
-    	return $pathfinder->getShortestPath($request->input('origin'), $request->input('destination'));
+        //pass the data to the pathfinder service
+        return $pathfinder->getShortestPath((int) $origin, (int) $destination);
     }
- }
+}

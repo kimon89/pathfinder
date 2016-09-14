@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Represents a repository
+ * Represents a repository.
  */
 class Repository extends Model
 {
@@ -14,11 +14,12 @@ class Repository extends Model
     public $timestamps = false;
 
     /**
-     * Many to many relationship with users
+     * Many to many relationship with users.
+     *
      * @return [type] [description]
      */
     public function users()
     {
-    	return $this->belongsToMany('App\Models\User');
+        return $this->belongsToMany('App\Models\User');
     }
 }

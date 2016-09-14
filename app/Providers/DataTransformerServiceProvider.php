@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\DataTransformerInterface;
 use App\Services\DatabaseTransformer;
-
 use Illuminate\Support\ServiceProvider;
 
 class DataTransformerServiceProvider extends ServiceProvider
