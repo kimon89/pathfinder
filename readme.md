@@ -1,9 +1,11 @@
 # Pathfinder
 
+Built using Laravel 5 and Swagger
+
 Install: composer install
 
 Sample Database is included in database/github.sql 
-or if you want fresh db create a "github" database and run
+or if you want a fresh db create a "github" database and run
 php artisan migrate
 php artisan db:seed
 
@@ -13,5 +15,5 @@ Endpoint to find path: /api/shortest-path/14/4 (example url based on current db 
 
 For unit tests run phpunit
 
-For functional tests run behat (required database: github_testing)
+For acceptance tests run behat (required database: github_testing)
 
